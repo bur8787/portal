@@ -1,2 +1,4 @@
 #! /bin/sh
-aws s3 cp src/ s3://suzutt.jp/ --recursive
+rm -rf target && mkdir target
+find src -type f -name "*.html" | xargs -I{} cp -P {} target
+#aws s3 cp index.html s3://suzutt.jp/ 
